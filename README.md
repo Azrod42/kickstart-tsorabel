@@ -200,14 +200,9 @@ sudo apt install make gcc ripgrep unzip git neovim
 ```
 sudo apt update
 sudo apt install make gcc ripgrep unzip git
-
-# Now we install nvim
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
-
-# make it available in /usr/local/bin, distro installs to /usr/bin
-sudo ln -sf /opt/nvim-linux64/bin/nvim /usr/local/bin/
+echo "deb https://deb.debian.org/debian unstable main" | sudo tee -a /etc/apt/sources.list
+sudo apt update
+sudo apt install -t unstable neovim
 ```
 </details>
 <details><summary>Fedora Install Steps</summary>
